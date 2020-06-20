@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
      // MARK: - يمكنك اضافه اللغات التي تريدها هنا
-    var  helloLangauge = ["اهلا"," Hola "," Bonjour "," Konnichiwa "," Namaste "]
-    var flagLanguage = [" 🇰🇼 "," 🇪🇸  "," 🇫🇷  "," 🇯🇵 "," 🇮🇳 "]
+    var  helloLangauge = ["اهلا"," Hola "," Bonjour "," Konnichiwa "," Namaste ", "hello", "marhaba",]
+    var flagLanguage = [" 🇰🇼 "," 🇪🇸  "," 🇫🇷  "," 🇯🇵 "," 🇮🇳 "," 🇬🇧", "🇹🇷"]
      // MARK: - علي كل لغه جديد يجب ان تضيف خانه جديده داخل ال greetingArray
-    var greetingArray : [String] = ["","","","",""]
+    var greetingArray : [String] = ["","","","","","",""]
     
     
     @IBOutlet weak var NameTextfield: UITextField!
@@ -22,12 +22,17 @@ class ViewController: UIViewController {
     @IBAction func Pressbutton(_ sender: Any) {
         Namelabel.text = ""
         
-        var name = NameTextfield.text!
+        _ = NameTextfield.text!
         
         
         // MARK: -  قم باستدعاء الداله هنا
+        func addName (name: String, helloArray: [String], flagArray: [String]){}
         
+            
+            
         
+         
+      
         // MARK: -  النهايه⚠️⚠️لا تقم بغير تحت هذا السطر
         
         
@@ -47,8 +52,17 @@ class ViewController: UIViewController {
     
     
     // MARK: -  قم بكتابة الداله هنا
-    
-    
+   func addName (name: String, helloArray: [String],flagArray: [String]){
+              for i in 0..<helloArray.count{
+         print(helloArray[i])
+         print(flagArray[i])
+                  greetingArray[i] = "\(helloArray[i]) \(name) \(flagArray[i])"
+                
+                
+              }
+
+          
+          }
     
     // MARK: -   النهايه⚠️⚠️ لا تقوم بغير تحت هذا السطر
     
@@ -56,5 +70,6 @@ class ViewController: UIViewController {
  
     
     
-}
 
+
+}
